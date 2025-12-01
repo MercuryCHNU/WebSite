@@ -1,0 +1,157 @@
+/* --- СТИЛІ ФУТЕРА (FOOTER) --- */
+
+.main-footer-creu {
+    background-image: url('../path/to/131153_ff990897b0f141ffba7738407c9e96f2~mv2.avif');
+    background-attachment: scroll; 
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center top; 
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    padding-top: 50px;
+    position: relative; /* Базовий контейнер для абсолютних елементів */
+    overflow: hidden; 
+}
+
+.footer-inner-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px 150px 20px; /* Достатній нижній padding для кота */
+}
+
+/* --- СЕКЦІЯ ФОРМИ --- */
+.feedback-section {
+    text-align: center;
+    width: 100%;
+    max-width: 500px;
+    margin-bottom: 40px;
+}
+
+.decorative-swirls {
+    font-size: 2rem;
+    color: #ffc107;
+    margin-bottom: 10px;
+}
+
+.feedback-section h4 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+/* --- СЕКЦІЯ ЛІНКІВ ТА СОЦМЕРЕЖ --- */
+.links-and-social {
+    width: 100%;
+    max-width: 900px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    position: relative; 
+    /* Зменшуємо padding, щоб дати більше місця для елементів, що виходять за межі */
+    padding: 0 20px; 
+}
+
+/* Група лінків та іконок (footer-links-group) */
+.footer-links-group { 
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 0; /* Виправлено зсув */
+    z-index: 4; /* Піднімаємо над фоном */
+}
+
+.footer-links-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+    line-height: 2.2;
+    /* ВИДАЛЕНО left: -200px; */
+}
+
+.footer-links-list a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+.footer-links-list a:hover {
+    text-decoration:dotted underline;
+    color: #c50094;
+}
+
+/* Іконки соціальних мереж */
+.social-icons {
+    display: flex; 
+    align-items: center;
+    gap: 10px;
+    margin-top: -15px;
+    /* ВИДАЛЕНО left: -111px; */
+}
+.social-icons a img {
+    width: 40px; 
+    height: 40px; 
+    display: block;
+}
+
+/* --- АБСОЛЮТНО ПОЗИЦІОНОВАНІ ЕЛЕМЕНТИ --- */
+
+/* Великий кіт */
+.footer-creu-cat-img {
+    position: absolute;
+    bottom: -100px; 
+    right: 5%; /* Адаптивний зсув */
+    width: 250px; 
+    height: auto;
+    z-index: 2;
+}
+
+/* Кнопка "Subscribe" (фіолетовий блок) */
+.footer-subscribe-btn {
+    position: absolute;
+    left: 0; /* Прилипаємо до лівого краю контейнера */
+    bottom: 110px; 
+    background-color: #ff4785; 
+    color: #ffffff;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    z-index: 3;
+}
+
+/* Балон "Contact us!" */
+.footer-contact-bubble {
+    position: absolute;
+    right: 0; /* Прилипаємо до правого краю контейнера */
+    bottom: 120px; 
+    background-color: #c9e6ff; 
+    color: #000000;
+    padding: 10px 15px;
+    border-radius: 10px 10px 0 10px; 
+    font-size: 0.9rem;
+    text-align: center;
+    z-index: 3;
+    transform: rotate(5deg);
+}
+.small-cats {
+    position: absolute;
+    bottom: 135px;
+    left: 10px; /* Трохи далі від краю */
+    display: flex;
+    gap: 5px;
+    z-index: 5;
+    width: 80px;
+    height: 80px;
+}
+
+/* Великий кіт */
+.footer-creu-cat-img {
+    position: absolute;
+    bottom: -100px; 
+    right: 0; /* Прилипаємо до правого краю */
+    width: 250px; 
+    height: auto;
+    z-index: 2;
+}

@@ -1,0 +1,405 @@
+/* --- ГЛОБАЛЬНІ ТА ОСНОВНІ СТИЛІ --- */
+body {
+    background-image: url('../path/to/creugang_catchwork_c.jpg');
+    
+    /* ЗМІНЮЄМО: Прибираємо fixed, керуємо позицією через JS */
+    background-attachment: scroll; 
+    
+    background-position: center top; /* Початкова позиція */
+    font-family: var(--font-family-primary);
+    color: var(--color-text);
+    scroll-behavior: smooth;
+    overflow-x: hidden; /* **КРИТИЧНО** - Приховує горизонтальну прокрутку */
+    width: 100%;
+    cursor: url(path/to/CURSORCREU8_page_01.png), auto;
+    
+}
+
+/* --- HEADER STYLES --- */
+.main-header {
+    width: 100%;
+    z-index: 1000;
+    font-family: var(--font-family-primary);
+    color: var(--color-text);
+}
+
+/* ВЕРХНЯ ПОЛОСА (ВІДЕО + ЛОГО) */
+.header-top-bar {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    background-color: #4a008a; /* Фоновий колір, якщо відео не завантажилося */
+    border-bottom: 2px solid #ffc107;
+}
+
+.video-background-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; 
+    z-index: 1; 
+}
+
+.video-background-top .video-bg {
+    /* Стилі для покриття фону */
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* filter: brightness(0.8); /* Залишено закоментованим, якщо потрібен фільтр */
+}
+
+/* Область ЛОГОТИПА */
+.logo-area {
+    position: absolute;
+    left: 30px;
+    top: 8%;
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.creu-logo {
+    width: 350px;
+    height: auto;
+    /* Ефект свічення */
+    filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5)) drop-shadow(0 0 5px rgba(255, 255, 255, 0.5));
+}
+
+.site-tagline {
+    font-size: 0.8rem;
+    text-transform: lowercase;
+    margin-top: -5px;
+    color: #ffc107; 
+}
+
+
+/* НИЖНЯ ПОЛОСА (МЕНЮ) */
+.main-nav-bar {
+    background-color: #ffc107; /* Залишаємо жовтий фон */
+    min-height: 15vh; /* Замінюємо фіксовану height на min-height */
+    padding: 0;
+    /* У мобільному режимі Bootstrap обробляє flexbox сам */
+}
+
+.main-nav-list {
+    /* Скидаємо стилі Bootstrap для кращого контролю */
+    width: 100%; 
+    padding: 0; 
+    margin: 0;
+}
+
+/* Стилі для посилань у згорнутому стані */
+.main-nav-list .nav-item .nav-link {
+    /* Ваші стилі для посилань */
+    color: #101010; 
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 5.5vh;
+    padding: 10px 15px; /* Додаємо вертикальний padding для зручності натискання на мобільних */
+}
+
+/* У режимі MD (нормальне відображення) відновлюємо горизонтальний вигляд */
+@media (min-width: 600px) {
+    .main-nav-list {
+        display: flex;
+        flex-direction: row;
+        gap: 60px; /* Повертаємо ваш великий відступ */
+        justify-content: center;
+    }
+    .main-nav-list .nav-item .nav-link {
+        padding: 0 5px; /* Знімаємо вертикальний padding */
+    }
+}
+
+.main-nav-list a:hover,
+.main-nav-list .active a {
+    color: #ff4785; 
+}
+
+/* CSS для точного обмеження ширини каруселі */
+.carousel-wrapper {
+    max-width: 95%; /* Обмеження ширини */
+    margin: 0 auto;   /* Центрування */
+    /* Додамо трохи відступу зверху/знизу для краси */
+    margin-top: 20px; 
+}
+
+/* --- CAROUSEL STYLES --- */
+.carousel-inner img {
+    width: 100%;
+    height: 35vw; /* Залишаємо висоту для адаптивності */
+}
+.carousel-caption {
+    max-height: 90%;
+    font-size: 2vw;
+    opacity: 0.90; 
+    border-radius: 10px;
+    /* Стиль градієнта був дуже специфічним, залишаю його як є, але варто перевірити його необхідність */
+    background: linear-gradient(250deg,deepskyblue,beige, blanchedalmond, lightblue);
+}
+.carousel-caption h3 {
+    font-size: 3vw;
+}
+
+/* --- IMAGE HOVER EFFECT (застосовується до всіх img) --- */
+img {
+    transition: all 1s;
+}
+/* --- СТИЛІ ДЛЯ WELCOME-BACK БАНЕРА --- */
+
+.welcome-back-banner {
+    /* Фон та рамка */
+    background-color: #959595ba; /* Темно-фіолетовий фон */
+    border-radius: 20px;       /* Заокруглення кутів */
+    
+    /* Відступи та розмір */
+    padding: 30px;             /* Внутрішній відступ контенту */
+    margin: 40px auto;         /* Центрування та зовнішні відступи */
+    max-width: 900px;          /* Обмеження ширини */
+    width: 90%; 
+    
+    /* Текст */
+    color: #ffa600;            /* Білий колір тексту */
+    text-align: center;        /* Центрування всього вмісту банера */
+    line-height: 1.5;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5); /* Додаємо тінь для об'єму */
+    position: relative; 
+    /* Забезпечує, що елементи з position: absolute будуть позиціонуватися відносно цього блоку. */
+    
+    /* Також додайте простір зверху для розміщення заголовка */
+    margin-top: 50px; /* Достатній зовнішній відступ, щоб фіолетовий блок був нижче */
+    padding-top: 50px; /* Збільшити верхній внутрішній відступ, щоб контент не перекривався */
+
+}
+
+/* Стиль для заголовка H2 (великий жовтий текст) */
+.welcome-back-banner h2 {
+    /* Фонт та колір */
+    font-family: 'Luckiest Guy', cursive; /* Використовуємо знайдений схожий шрифт */
+    color: #ff6a00; /* Яскраво-жовтий колір (як на зразку) */
+    font-size: 3.5vw; /* Залишаємо великий розмір */
+    font-weight: 400;
+    white-space: nowrap; 
+
+    /* Абсолютне позиціонування для накладання */
+    position: absolute; 
+    top: -30px; /* Збільшуємо підйом, щоб він був краще виділений */
+    left: 50%;
+    transform: translateX(-50%); 
+    z-index: 10; 
+    
+    /* ТІНІ ДЛЯ ОБ'ЄМНОГО ЕФЕКТУ (як на зразку) */
+    text-shadow: 
+        /* 1. Обведення: темний/фіолетовий колір банера, зміщений трохи вниз/вправо */
+        2px 2px 0 #3b3075,
+        /* 2. Глибина: ще темніший колір, зміщений сильніше, щоб створити ефект 3D */
+        4px 4px 0 #1f1a3f; /* Дуже темний фіолетовий/синій */
+
+    /* Прибираємо стилі фону для заголовка, якщо він має бути прозорим */
+    background-color: transparent; 
+    padding: 0;
+    margin: 0;
+}
+
+/* --- КОРИГУВАННЯ ФІОЛЕТОВОГО БАНЕРА --- */
+.welcome-back-banner {
+    /* ... інші стилі ... */
+    
+    /* Коригуємо зовнішній відступ, щоб дати місце накладеному заголовку */
+    margin-top: 60px; /* Збільшуємо, щоб фіолетовий блок не починався занадто високо */
+    padding-top: 60px; /* Збільшуємо, щоб текст всередині не накладався на h2 */
+
+    /* Додатково: якщо текст у банері має бути білим, як на першому зразку */
+    color: #ffffff;
+    font-family: 'Luckiest Guy', cursive;
+    letter-spacing: 2px;
+    font-weight: bold; /* Робимо шрифт жирнішим (якщо використовується сімейство шрифтів, яке підтримує bold) */
+    
+    /* Додаємо тонку чорну окантовку/обведення */
+    text-shadow: 
+        2px 2px 0 #000,
+        -1px 1px 0 #000,
+        1px -1px 0 #000,
+        -1px -1px 0 #000;
+}
+.welcome-back-banner-2 {
+    /* Фон та рамка */
+    background-color: #959595ba; /* Темно-фіолетовий фон */
+    border-radius: 20px;       /* Заокруглення кутів */
+    
+    
+    /* Відступи та розмір */
+    padding: 30px;             /* Внутрішній відступ контенту */
+    margin: 40px auto;         /* Центрування та зовнішні відступи */
+    max-width: 900px;          /* Обмеження ширини */
+    width: 90%; 
+    
+    /* Текст */
+    color: #ffa600;            /* Білий колір тексту */
+    text-align: center;        /* Центрування всього вмісту банера */
+    line-height: 1.5;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5); /* Додаємо тінь для об'єму */
+    position: relative; 
+    /* Забезпечує, що елементи з position: absolute будуть позиціонуватися відносно цього блоку. */
+    
+    /* Також додайте простір зверху для розміщення заголовка */
+    margin-top: 50px; /* Достатній зовнішній відступ, щоб фіолетовий блок був нижче */
+    padding-top: 50px; /* Збільшити верхній внутрішній відступ, щоб контент не перекривався */
+
+}
+
+/* Стиль для заголовка H2 (великий жовтий текст) */
+.welcome-back-banner-2 h2 {
+    /* Фонт та колір */
+    font-family: 'Luckiest Guy', cursive; /* Використовуємо знайдений схожий шрифт */
+    color: #ff6a00; /* Яскраво-жовтий колір (як на зразку) */
+    font-size: 3.5vw; /* Залишаємо великий розмір */
+    font-weight: 400;
+    white-space: nowrap; 
+
+    /* Абсолютне позиціонування для накладання */
+    position: absolute; 
+    top: -30px; /* Збільшуємо підйом, щоб він був краще виділений */
+    left: 50%;
+    transform: translateX(-50%); 
+    z-index: 10; 
+    
+    /* ТІНІ ДЛЯ ОБ'ЄМНОГО ЕФЕКТУ (як на зразку) */
+    text-shadow: 
+        /* 1. Обведення: темний/фіолетовий колір банера, зміщений трохи вниз/вправо */
+        2px 2px 0 #3b3075,
+        /* 2. Глибина: ще темніший колір, зміщений сильніше, щоб створити ефект 3D */
+        4px 4px 0 #1f1a3f; /* Дуже темний фіолетовий/синій */
+
+    /* Прибираємо стилі фону для заголовка, якщо він має бути прозорим */
+    background-color: transparent; 
+    padding: 0;
+    margin: 0;
+}
+
+/* --- КОРИГУВАННЯ ФІОЛЕТОВОГО БАНЕРА --- */
+.welcome-back-banner-2 {
+    /* ... інші стилі ... */
+    
+    /* Коригуємо зовнішній відступ, щоб дати місце накладеному заголовку */
+    margin-top: 60px; /* Збільшуємо, щоб фіолетовий блок не починався занадто високо */
+    padding-top: 60px; /* Збільшуємо, щоб текст всередині не накладався на h2 */
+
+    /* Додатково: якщо текст у банері має бути білим, як на першому зразку */
+    color: #ffffff;
+    font-family: 'Luckiest Guy', cursive;
+    letter-spacing: 2px;
+    font-weight: bold; /* Робимо шрифт жирнішим (якщо використовується сімейство шрифтів, яке підтримує bold) */
+    
+    /* Додаємо тонку чорну окантовку/обведення */
+    text-shadow: 
+        2px 2px 0 #000,
+        -1px 1px 0 #000,
+        1px -1px 0 #000,
+        -1px -1px 0 #000;
+}
+.welcome-back-banner-3 {
+    /* Фон та рамка */
+    background-color: #959595ba; /* Темно-фіолетовий фон */
+    border-radius: 20px;       /* Заокруглення кутів */
+    
+    
+    /* Відступи та розмір */
+    padding: 30px;             /* Внутрішній відступ контенту */
+    margin: 40px auto;         /* Центрування та зовнішні відступи */
+    max-width: 900px;          /* Обмеження ширини */
+    width: 90%; 
+    
+    /* Текст */
+    color: #ffa600;            /* Білий колір тексту */
+    text-align: center;        /* Центрування всього вмісту банера */
+    line-height: 1.5;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5); /* Додаємо тінь для об'єму */
+    position: relative; 
+    /* Забезпечує, що елементи з position: absolute будуть позиціонуватися відносно цього блоку. */
+    
+    /* Також додайте простір зверху для розміщення заголовка */
+    margin-top: 50px; /* Достатній зовнішній відступ, щоб фіолетовий блок був нижче */
+    padding-top: 50px; /* Збільшити верхній внутрішній відступ, щоб контент не перекривався */
+
+}
+
+/* Стиль для заголовка H2 (великий жовтий текст) */
+.welcome-back-banner-3 h2 {
+    /* Фонт та колір */
+    font-family: 'Luckiest Guy', cursive; /* Використовуємо знайдений схожий шрифт */
+    color: #ff6a00; /* Яскраво-жовтий колір (як на зразку) */
+    font-size: 3.5vw; /* Залишаємо великий розмір */
+    font-weight: 400;
+    white-space: nowrap; 
+
+    /* Абсолютне позиціонування для накладання */
+    position: absolute; 
+    top: -30px; /* Збільшуємо підйом, щоб він був краще виділений */
+    left: 25%;
+    transform: translateX(-50%); 
+    z-index: 10; 
+    
+    /* ТІНІ ДЛЯ ОБ'ЄМНОГО ЕФЕКТУ (як на зразку) */
+    text-shadow: 
+        /* 1. Обведення: темний/фіолетовий колір банера, зміщений трохи вниз/вправо */
+        2px 2px 0 #3b3075,
+        /* 2. Глибина: ще темніший колір, зміщений сильніше, щоб створити ефект 3D */
+        4px 4px 0 #1f1a3f; /* Дуже темний фіолетовий/синій */
+
+    /* Прибираємо стилі фону для заголовка, якщо він має бути прозорим */
+    background-color: transparent; 
+    padding: 0;
+    margin: 0;
+}
+
+/* --- КОРИГУВАННЯ ФІОЛЕТОВОГО БАНЕРА --- */
+.welcome-back-banner-3 {
+    /* ... інші стилі ... */
+    
+    /* Коригуємо зовнішній відступ, щоб дати місце накладеному заголовку */
+    margin-top: 60px; /* Збільшуємо, щоб фіолетовий блок не починався занадто високо */
+    padding-top: 60px; /* Збільшуємо, щоб текст всередині не накладався на h2 */
+
+    /* Додатково: якщо текст у банері має бути білим, як на першому зразку */
+    color: #ffffff;
+    font-family: 'Luckiest Guy', cursive;
+    letter-spacing: 2px;
+    font-weight: bold; /* Робимо шрифт жирнішим (якщо використовується сімейство шрифтів, яке підтримує bold) */
+    
+    /* Додаємо тонку чорну окантовку/обведення */
+    text-shadow: 
+        2px 2px 0 #000,
+        -1px 1px 0 #000,
+        1px -1px 0 #000,
+        -1px -1px 0 #000;
+}
+.video-bg-2 {
+    width: 100%;
+}
+.dedde-banner {
+    width: 100%;
+    height: 50px; 
+    
+    display: flex;
+    justify-content: center; 
+    align-items:baseline;     
+    
+    /* СТИЛЬ ДЛЯ ЕЛЕГАНТНОСТІ */
+    font-family: 'Parisienne', cursive; /* <--- НОВИЙ ГРАЦІОЗНИЙ ШРИФТ */
+    color: #ff5500; /* Яскраво-жовтий текст */
+    font-size: 3rem; /* Збільшимо розмір для каліграфії */
+    font-weight: bolder; 
+    text-transform: none; /* Каліграфія краще виглядає в природному регістрі */
+    
+    /* ЕЛЕГАНТНА ТІНЬ */
+    text-shadow: 3px 3px 6px rgb(69, 28, 0); 
+}

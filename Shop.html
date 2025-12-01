@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creucat - Inspired Template</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap" rel="stylesheet">
+    <style> 
+        /* --- СТИЛІ КАРТОК МАГАЗИНУ --- */
+.product-card {
+    border-radius: 10px;
+    border: 1px solid #e0e0e0;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.product-card .card-header {
+    font-weight: 700;
+    font-size: 1.1rem;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.product-card .card-img-top {
+    height: 180px; /* Фіксована висота для зображення */
+    object-fit: cover; /* Зображення покриває область */
+}
+
+/* Кнопка "Buy" у стилі Bootstrap */
+.product-card .buy-btn {
+    font-weight: bold;
+    border-radius: 50px;
+}
+
+/* Для забезпечення однакової висоти карток (використовуємо flex-column і mt-auto) */
+.product-card .card-body {
+    display: flex;
+    flex-direction: column;
+}
+    </style>
+</head>
+
+<body>
+
+    <header class="main-header">
+
+        <div class="header-top-bar">
+
+            <div class="video-background-top">
+                <video autoplay muted loop playsinline class="video-bg">
+                    <source src="path/to/THE END OF CREU3.mp4" type="video/mp4">
+                </video>
+            </div>
+
+            <div class="logo-area">
+                <a href="Creu.html">
+                    <img src="path/to/giphy (8).gif" alt="Creu Cat Logo" class="creu-logo">
+                </a>
+            </div>
+        </div>
+
+        <nav class="navbar navbar-expand-md navbar-light main-nav-bar p-0">
+
+            <button class="navbar-toggler ml-auto mr-3" type="button" data-toggle="collapse" data-target="#creuNavbar"
+                aria-controls="creuNavbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-center" id="creuNavbar">
+                <ul class="navbar-nav main-nav-list">
+                    <li class="nav-item"><a class="nav-link" href="Characters.html">ПРО МЕНЕ</a></li>
+                    <li class="nav-item active"><a class="nav-link" href="Gifs.html">МАТЕРІАЛИ & РÉСУРСИ</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Blog.html">БЛОГ</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Shop.html">ПОКУПКИ</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="dedde-banner">
+            Dedde
+        </div>
+    </header>
+
+    <main class="content-wrapper">
+        <div class="welcome-back-banner">
+            <section id="shop-grid" class="container py-5">
+    <h2 class="text-center mb-5" style="font-family: var(--font-family-accent);">
+        🔥 Магазин Ресурсів та Консультацій 🔥
+    </h2>
+    
+    <div class="row justify-content-center">
+        
+        <div class="col-12 col-md-6 col-lg-5 mb-4">
+            <div class="card h-100 shadow-lg product-card">
+                <div class="card-header bg-warning text-white text-uppercase">Photoshop для чайників! (Тестовий міні-курс)</div>
+                <img src="path/to/d0c1708ab2d0b4f694b0f51f3ed47e92.jpg" class="card-img-top product-image" alt="Іконка консультації">
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">Проблема? Рішення!</h5>
+                    <p class="card-text">Хочете створювати круті картинки, але не знаєте, з чого почати, любі Чайничкі?</p>
+                    <div class="mt-auto">
+                        <a href="https://ko-fi.com/s/168f13c893" target="_blank" class="btn btn-primary w-100 buy-btn">
+                            Придбати (1 Кава)
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-12 col-md-6 col-lg-5 mb-4">
+            <div class="card h-100 shadow-lg product-card">
+                <div class="card-header bg-info text-white text-uppercase">Photoshop для середньостатистичних! (Тестовий міні-курс)</div>
+                <img src="path/to/giphy (12).gif" class="card-img-top product-image" alt="Іконка пресетів">
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">10 Топових LUTs / Actions</h5>
+                    <p class="card-text">Цей міні-курс ідеальний для тих, хто вже володіє базовими інструментами у Photoshop.</p>
+                    <div class="mt-auto">
+                        <a href="https://ko-fi.com/s/7f11dcb041" target="_blank" class="btn btn-info w-100 buy-btn">
+                            Придбати (3 Пива)
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-5 mb-4">
+            <div class="card h-100 shadow-lg product-card">
+                <div class="card-header bg-danger text-white text-uppercase">Курс по проектуванню анімацій в Photoshop</div>
+                <img src="path/to/CHAIR.gif" class="card-img-top product-image" alt="Іконка векторних елементів">
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">20+ Іконок та Паттернів</h5>
+                    <p class="card-text">Ви навчитеся створювати професійну 2D-анімацію (frame-by-frame та motion graphics) для соціальних мереж та вебу.</p>
+                    <div class="mt-auto">
+                        <a href="https://ko-fi.com/s/cac2f740b7" target="_blank" class="btn btn-danger w-100 buy-btn">
+                            Придбати (5 Еспресо)
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-5 mb-4">
+            <div class="card h-100 shadow-lg product-card">
+                <div class="card-header bg-success text-white text-uppercase">VIP-Доступ до Бібліотеки</div>
+                <img src="path/to/CREUCLAP_small.gif" class="card-img-top product-image" alt="Іконка VIP-доступу">
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">Підписка на всі наявні курси (місячна)</h5>
+                    <p class="card-text">Ця підписка відкриває для вас повний доступ до всієї бібліотеки навчальних матеріалів.</p>
+                    <div class="mt-auto">
+                        <a href="https://ko-fi.com/s/6ef6460de5" target="_blank" class="btn btn-success w-100 buy-btn">
+                            Тільки за підпискою :3
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+        </div>
+
+
+    </main>
+
+    <footer class="main-footer-creu">
+        <div class="footer-inner-content">
+
+            <div class="feedback-section google-form-embed">
+
+                <button class="btn btn-warning btn-lg w-75 mb-3" type="button" data-toggle="collapse"
+                    data-target="#googleFormCollapse" aria-expanded="false" aria-controls="googleFormCollapse">
+                </button>
+
+                <div class="collapse" id="googleFormCollapse">
+
+                    <div class="rating-header mt-3">
+                        <div class="decorative-swirls"><img src="path/to/separators_mail.avif" alt="Slide 2"></div>
+                        <h4>What do you think of the Website?</h4>
+                    </div>
+
+                    <iframe
+                        src="https://docs.google.com/forms/d/e/1FAIpQLScQH8YvVh6Gx6pKfBObMiJHsadnR7FGCr4YxbbeUdh4CkK5gA/viewform?embedded=true"
+                        width="100%" height="500" frameborder="0" marginheight="0" marginwidth="0">
+                        Завантаження…
+                    </iframe>
+
+                </div>
+            </div>
+            <div class="links-and-social">
+
+                <div class="footer-links-group">
+                    <a href="#" class="footer-subscribe-btn">Підпишись на оновлення!</a>
+
+                    <ul class="footer-links-list">
+                        <li><a href="#">Умови користування</a></li>
+                        <li><a href="#">Політика користування</a></li>
+                    </ul>
+
+                    <div class="social-icons">
+                        <a href="#" class="social-icon youtube"><img
+                                src="path/to/11062b_8dcadfa428954b1d919f8499f75aa27a~mv2.avif" alt="youtube"></a>
+                        <a href="#" class="social-icon instagram"><img
+                                src="path/to/11062b_55e4be1e75564866b6c28290f9a9d271~mv2.avif" alt="instagram"></a>
+                        <a href="#" class="social-icon kofi"><img
+                                src="path/to/131153_ba5739a45eab480cbd4a58ba4af5488a~mv2.avif" alt="kofi"></a>
+                    </div>
+                </div>
+
+                <div class="footer-contact-bubble">
+                    <p>Питання? Пропозиції?</p>
+                    <a href="#googleFormCollapse" class="contact-link-text" data-toggle="collapse" aria-expanded="false"
+                        aria-controls="googleFormCollapse">
+                        Тикни на форму!
+                    </a>
+                </div>
+
+                <img src="path/to/creu_footerCOMP2.avif" alt="Happy Creu Cat" class="footer-creu-cat-img">
+
+                <div class="small-cats">
+                    <img src="path/to/SUBSCRIBECREU2min.avif" alt="Small White Cat">
+                </div>
+
+            </div>
+        </div>
+
+        <div class="copyright-bar">
+            © 2025-2025 Всі авторські права належать <a href="#">PriVer</a>.
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Встановлюємо швидкість паралаксу (чим менше число, тим повільніше рухається фон)
+            var parallaxSpeed = 0.6;
+
+            // Отримуємо посилання на елемент body
+            var $body = $('body');
+
+            // Функція, яка виконується при кожному прокручуванні
+            function applyParallax() {
+                // Отримуємо поточне положення прокручування
+                var scrolled = $(window).scrollTop();
+
+                // Обчислюємо нову вертикальну позицію фону (рухається повільніше, ніж прокрутка)
+                // Використовуємо Math.round для кращої продуктивності
+                var newY = Math.round(scrolled * parallaxSpeed);
+
+                // Застосовуємо нову позицію до фону body
+                // 'center' фіксує горизонтальну позицію, newY задає вертикальну
+                $body.css('background-position', 'center ' + newY + 'px');
+            }
+
+            // Запускаємо функцію при прокручуванні та завантаженні
+            $(window).on('scroll', applyParallax);
+            applyParallax(); // Викликаємо один раз, щоб встановити початкову позицію
+        });
+    </script>
+
+</body>
+
+</html>
